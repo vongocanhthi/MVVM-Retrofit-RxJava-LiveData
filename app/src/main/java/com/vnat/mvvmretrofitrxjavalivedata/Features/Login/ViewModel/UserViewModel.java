@@ -2,7 +2,9 @@ package com.vnat.mvvmretrofitrxjavalivedata.Features.Login.ViewModel;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.TextView;
 
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -27,17 +29,20 @@ public class UserViewModel extends ViewModel {
     private ClientService clientService;
     private MutableLiveData<User> userLiveData;
     private MutableLiveData<List<User>> userListLiveData;
+    private MutableLiveData<String> nameLiveData;
 
     public void init(){
         if (userListLiveData != null){
             return;
         }
+        nameLiveData = new MutableLiveData<>();
+        nameLiveData.setValue("Anh Thi");
         userLiveData = new MutableLiveData<>();
         userListLiveData = new MutableLiveData<>();
         clientService = ApiService.getClientService();
     }
 
-    public void getListUser(){
+    public void getUserList(){
         clientService.getListUser()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -75,7 +80,7 @@ public class UserViewModel extends ViewModel {
                     @Override
                     public void onNext(User user) {
                         userLiveData.setValue(user);
-                        Log.d("zzz", user.getName());
+                        nameLiveData.setValue(user.getName());
                     }
 
                     @Override
@@ -98,4 +103,7 @@ public class UserViewModel extends ViewModel {
         return userLiveData;
     }
 
+    public MutableLiveData<String> getNameLiveData() {
+        return nameLiveData;
+    }
 }
