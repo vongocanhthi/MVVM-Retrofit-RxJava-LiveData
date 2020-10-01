@@ -31,7 +31,7 @@ public class UserViewModel extends ViewModel {
     private MutableLiveData<List<User>> userListLiveData;
     private MutableLiveData<String> nameLiveData;
 
-    public void init(){
+    public UserViewModel(){
         if (userListLiveData != null){
             return;
         }
@@ -55,7 +55,7 @@ public class UserViewModel extends ViewModel {
                     @Override
                     public void onSuccess(List<User> users) {
                         userListLiveData.setValue(users);
-//                        Log.d("zzz", userListLiveData.)
+                        Log.d("zzz", String.valueOf(users));
                     }
 
                     @Override
@@ -103,7 +103,7 @@ public class UserViewModel extends ViewModel {
         return userLiveData;
     }
 
-    public MutableLiveData<String> getNameLiveData() {
+    public LiveData<String> getNameLiveData() {
         return nameLiveData;
     }
 }

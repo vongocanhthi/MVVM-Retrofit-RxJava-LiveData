@@ -2,8 +2,6 @@ package com.vnat.mvvmretrofitrxjavalivedata.Features.Login.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.vnat.mvvmretrofitrxjavalivedata.Address;
-import com.vnat.mvvmretrofitrxjavalivedata.Company;
 
 public class User {
 

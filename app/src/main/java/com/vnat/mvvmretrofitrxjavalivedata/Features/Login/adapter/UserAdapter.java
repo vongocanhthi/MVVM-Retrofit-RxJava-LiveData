@@ -1,4 +1,4 @@
-package com.vnat.mvvmretrofitrxjavalivedata.Features.Login;
+package com.vnat.mvvmretrofitrxjavalivedata.Features.Login.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,7 +44,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         return userArrayList == null ? 0 : userArrayList.size();
     }
 
-    class UserViewHolder extends RecyclerView.ViewHolder {
+    static class UserViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.txtName)
         TextView txtName;
 

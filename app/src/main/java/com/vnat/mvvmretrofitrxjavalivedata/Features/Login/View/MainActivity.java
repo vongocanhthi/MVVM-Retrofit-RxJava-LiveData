@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vnat.mvvmretrofitrxjavalivedata.Features.Login.Model.User;
-import com.vnat.mvvmretrofitrxjavalivedata.Features.Login.UserAdapter;
+import com.vnat.mvvmretrofitrxjavalivedata.Features.Login.adapter.UserAdapter;
 import com.vnat.mvvmretrofitrxjavalivedata.Features.Login.ViewModel.UserViewModel;
 import com.vnat.mvvmretrofitrxjavalivedata.Helper.RecyclerViewItemClickListener;
 import com.vnat.mvvmretrofitrxjavalivedata.R;
@@ -50,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         viewModel = ViewModelProviders.of(this).get(UserViewModel.class);
-        viewModel.init();
+//        viewModel.init();
 
-        funGetetUserList();
+        funGetUserList();
         funClickRecyclerView();
         funGetUser();
     }
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void funGetetUserList() {
+    private void funGetUserList() {
         rcvUser.setHasFixedSize(true);
         rcvUser.setLayoutManager(new LinearLayoutManager(this));
 

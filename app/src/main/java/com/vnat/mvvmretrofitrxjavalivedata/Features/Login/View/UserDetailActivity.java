@@ -33,7 +33,7 @@ public class UserDetailActivity extends AppCompatActivity {
 
         int id = (int) getIntent().getExtras().get("id");
         viewModel = ViewModelProviders.of(this).get(UserViewModel.class);
-        viewModel.init();
+//        viewModel.init();
 
         viewModel.getUser(id);
 

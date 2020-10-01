@@ -34,9 +34,9 @@ public class ApiService {
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
-            }
-            return retrofit.create(ClientService.class);
         }
+        return retrofit.create(ClientService.class);
+    }
 
 }
 

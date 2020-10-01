@@ -1,4 +1,4 @@
-package com.vnat.mvvmretrofitrxjavalivedata;
+package com.vnat.mvvmretrofitrxjavalivedata.Features.Login.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

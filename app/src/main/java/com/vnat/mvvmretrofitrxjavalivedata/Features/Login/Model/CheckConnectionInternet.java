@@ -1,4 +1,4 @@
-package com.vnat.mvvmretrofitrxjavalivedata;
+package com.vnat.mvvmretrofitrxjavalivedata.Features.Login.Model;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
